@@ -1,4 +1,11 @@
-hello:
-	clang++ -Wall -std=c++11 main.cpp -o test
+default: build
+
+EXECUTABLE = todo
+CCC	= clang++
+LIBS = -Wall -lncurses -std=c++11
+
+build:
+	$(CCC) $(LIBS) main.cc -o $(EXECUTABLE) 
+
 clean:
-	rm *.txt
+	rm $(EXECUTABLE)
